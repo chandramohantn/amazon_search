@@ -34,12 +34,12 @@ class SpellCorrector:
             List[str]: List of closest products to the query.
         """
         self.distance_calculator.set_metric(self.string_metric)
-        product_catalog = self.cache_data.get('product_catalog', [])
-        if not product_catalog:
-            print("Product catalog is empty or not loaded.")
+        vocabulary = self.cache_data.get('vocab', [])
+        if not vocabulary:
+            print("Vocabulary is empty or not loaded.")
             return []
 
-        distances = [(product, self.distance_calculator.compute(query, product)) for product in product_catalog]
+        distances = [(product, self.distance_calculator.compute(query, product)) for product in vocabulary]
         distances.sort(key=lambda x: x[1])
         return [product for product, _ in distances[:self.top_k_candidates]]
 
@@ -57,7 +57,7 @@ class SpellCorrector:
             print("No candidates provided for scoring.")
             return None
         # Tie-break using product queries (frequency)
-        return max(candidates, key=lambda x: self.cache_data['vocab'].get(x, 0))
+        return max(candidates, key=lambda x: self.cache_data['product_queries'].get(x, 0))
     
     def check_confidence(self, query: str) -> bool:
         """

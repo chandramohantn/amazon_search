@@ -21,9 +21,9 @@ class LoadCache:
 
     def load_all_cache(self):
         return {
-            'product_catalog': self.load_json('product_catalog.json'),
+            'product_catalog': self.load_json('product_catalog.json')["inventory"],
             'product_queries': self.load_json('product_queries.json'),
             'product_spell': self.load_json('product_spell.json'),
-            'vocab': self.load_json('vocab.json')
+            'vocab': self.load_json('vocab.json')["vocabulary"]
         }
 
