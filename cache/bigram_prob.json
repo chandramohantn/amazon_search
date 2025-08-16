@@ -1,0 +1,46 @@
+{
+    "the": {
+        "quick": 0.04,
+        "brown": 0.03
+    },
+    "quick": {
+        "brown": 0.03,
+        "fox": 0.02
+    },
+    "brown": {
+        "fox": 0.02,
+        "jumps": 0.01
+    },
+    "fox": {
+        "jumps": 0.01,
+        "over": 0.01
+    },
+    "jumps": {
+        "over": 0.01,
+        "lazy": 0.01
+    },
+    "over": {
+        "lazy": 0.01,
+        "dog": 0.01
+    },
+    "lazy": {
+        "dog": 0.01
+    },
+    "nike": {
+        "air": 0.05,
+        "shoes": 0.05
+    },
+    "air": {
+        "max": 0.05
+    },
+    "max": {
+        "running": 0.02
+    },
+    "apple": {
+        "iphone": 0.1,
+        "promax": 0.05
+    },
+    "iphone": {
+        "promax": 0.05
+    }
+}

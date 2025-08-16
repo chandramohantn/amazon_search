@@ -1,6 +1,6 @@
 import os
 from typing import List, Optional
-from query_processor.load_cache import LoadCache
+from utils.load_cache import LoadCache
 from utils.distances import StringDistance
 from dotenv import load_dotenv
 
@@ -168,5 +168,3 @@ class SpellCorrector:
         # 5. Return final corrected query
         print(f"✅ Final Corrected Query: {corrected_query}")
         return corrected_query
-
-
